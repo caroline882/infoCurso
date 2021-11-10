@@ -1,0 +1,29 @@
+
+
+.php{
+    background-color: rgb(226, 191, 191);
+}
+.php2{
+    background-color: rgb(226, 191, 191);
+}
+
+label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  .carol {
+     color: rgb(11, 11, 12);
+  }
+  .center {
+    margin: auto;
+    width: 35%;
+    border: 3px solid rgb(5, 5, 5);
+    padding: 5px;
+  }
+  .center {
+    text-align: center;
+    border: 2px solid rgb(8, 8, 8);
+    border-radius: 0.5em;
+  }
+  
