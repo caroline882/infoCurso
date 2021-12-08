@@ -46,8 +46,7 @@
   
   </select> 
   
-  <input type="submit" name="Cadastrar!" value="">
- 
+  <button type="button">Cadastrar</button> 
  
  
  

@@ -25,7 +25,7 @@
   <option value="/">/</option>
   <option value="*">*</option>
   </select> 
-  <input type="button" value="btnCalcular">
+  <button type="button">Cadastrar</button> 
   
 </form>
 </body>
