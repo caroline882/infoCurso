@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora!</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/cadastro.js"></script>
     <!--<link rel="stylesheet" type="text/css" href="./css/estilo.css">-->
 </head>
 <body>
@@ -21,7 +22,7 @@
     Cadastrar!
   </button>
    
-   <table id="idTabelaClientes" class="table table-responsive tble-striped table-hover">
+   <table id="idTabelaClientes" class="table table-responsive table-striped table-hover">
      <thead>
        <tr>
          <th>
@@ -46,46 +47,88 @@
            Estado
          </th>
          <th>
-           Nome do usuário
+           Nome do Usuário
          </th>
          <th>
            Profissão
          </th>
+         <th>
+           Ações
+         </th>
        </tr>
      </thead>
-     <tbody>
-       <tr>
-         <td>
-           Caroline
-         </td>
-         <td>
-           Tremarin Araldi
-         </td>
-         <td>
-           08/01/2002        
-         </td>
-         <td>
-           tremarincaroline8@gmail.com
-         </td>
-          Rua Candido Costa
-        </td>
-        <td>
-          BG
-        </td>
-        <td>
-          RS
-        </td>
-        <td>
-          Caroline
-        </td>
-        <td>
-          TI
-        </td>
-       </tr>
-     </tbody>
+      <tbody>
+        <tr>
+          <td>
+            Caroline
+          </td>
+          <td>
+            Tremarin Araldi
+          </td>
+          <td>
+            08/01/2002        
+          </td>
+          <td>
+            tremarincaroline8@gmail.com
+          </td>
+          <td>
+            Rua Candido Costa
+          </td>
+          <td>
+            BG
+          </td>
+          <td>
+            RS
+          </td>
+          <td>
+            Caroline
+          </td>
+          <td>
+            TI
+          </td>
+          <td>
+            <button type="button" class="btn btn-editar" value = "1" >Editar</button>
+            <button type="button" class="btn btn-excluir" value = "1">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Caroline b
+          </td>
+          <td>
+            Tremarin Araldi
+          </td>
+          <td>
+            08/01/2002        
+          </td>
+          <td>
+            tremarincaroline8@gmail.com
+          </td>
+          <td>
+            Rua Candido Costa
+          </td>
+          <td>
+            BG
+          </td>
+          <td>
+            RS
+          </td>
+          <td>
+            Caroline
+          </td>
+          <td>
+            TI
+          </td>
+          <td>
+            <button type="button" class="btn btn-editar" value = "2" >Editar</button>
+            <button type="button" class="btn btn-excluir" value = "2">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
    </table>
-
 </div>
+
+
 <!-- Modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -100,6 +143,12 @@
         <h5></h5>
 
         <div class="row justify-content-center">
+
+         <div class="col-lg-1 col-md-4">
+            <label for="id">id:</label><br>
+            <input class="form-control btn btn-outline-success" type="text" id="id" name="nome" >
+          </div>
+
           <div class="col-lg-3 col-md-5">
             <label for="nome">Nome:</label><br>
             <input class="form-control btn btn-outline-success" type="text" id="nome" name="nome" >
@@ -137,7 +186,7 @@
 
         <div class= "row justify-content-center">
 
-        <div class="col-lg-2 col-md-2">
+         <div class="col-lg-2 col-md-2">
             <label for="estado">Estado:</label><br>
             <input class="form-control btn btn-outline-success" type="estado" id="estado" name="estado" ><br>
           </div>
