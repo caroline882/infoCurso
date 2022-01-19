@@ -10,18 +10,18 @@ $conexao = null;
 
 function conectar(){
 
-    $conexao = new \mysqli($servidor, $usuario, $senha, $nomedobanco, $porta);
+    $conexao = new \mysqli($servidor, "root", "qwe123", $nomeBanco, $porta);
 
     if ($conexao->connect_error) {
         die('Não foi possível conectar: ' . $conexao->connect_error);
     }
-    echo 'Conexão bem sucedida';
+    echo 'Conexão bem sucedida <br>';
 }
 
 function desConectar(){
-    sleep(5);
+    echo 'Desconectou';
     mysql_close($conexao);
-    echo 'deconectou';
+    
 }
 
 conectar();
