@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/cadastro.js"></script>
+    <script src="./js/cadastroUsuario.js"></script>
     <!--<link rel="stylesheet" type="text/css" href="./css/estilo.css">-->
 </head>
 <body>
@@ -22,7 +22,7 @@
     Cadastrar!
   </button>
    
-   <table id="idTabelaClientes" class="table table-responsive table-striped table-hover">
+   <table id="idTabelaUsuario" class="table table-responsive table-striped table-hover">
      <thead>
        <tr>
          <th>
