@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: info_curso
 -- ------------------------------------------------------
--- Server version	5.5.5-10.3.31-MariaDB-0ubuntu0.20.04.1
+-- Server version	5.5.5-10.3.32-MariaDB-0ubuntu0.20.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -68,14 +68,12 @@ DROP TABLE IF EXISTS `produtos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `produtos` (
   `id` tinyint(4) NOT NULL AUTO_INCREMENT,
-  `classificacao` varchar(30) DEFAULT NULL,
-  `quantidade` decimal(15,2) DEFAULT 0.00,
-  `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
-  `data_atualizacao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `nome` varchar(255) NOT NULL,
-  `descricao` varchar(255) NOT NULL,
-  `sku` varchar(150) NOT NULL DEFAULT '0',
+  `descricao` varchar(255) DEFAULT NULL,
+  `codigo_sku` varchar(150) NOT NULL DEFAULT '0',
+  `quantidade` decimal(15,4) NOT NULL DEFAULT 0.0000,
   `peso` decimal(15,4) NOT NULL DEFAULT 0.0000,
+  `classificacao` varchar(150) DEFAULT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 1,
   `largura` varchar(30) DEFAULT NULL,
   `altura` varchar(30) DEFAULT NULL,
@@ -85,7 +83,10 @@ CREATE TABLE `produtos` (
   `gtin` varchar(30) NOT NULL DEFAULT '0',
   `unidade_medida` varchar(10) DEFAULT NULL,
   `condicao` varchar(50) NOT NULL DEFAULT 'Novo',
-  PRIMARY KEY (`id`)
+  `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
+  `data_atualizacao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `codigo_sku` (`codigo_sku`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -116,7 +117,7 @@ CREATE TABLE `usuarios` (
   `data_criacao` timestamp NOT NULL DEFAULT current_timestamp(),
   `data_atualizacao` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +126,6 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Caroline','caroline20','tremarincaroline8@gmail.com','qwe123',1,'tremarincaroline8@gmail.com','2022-02-02 00:01:21','2022-02-02 00:01:21');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -142,4 +142,17 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-02-01 21:57:33
+-- Dump completed on 2022-02-01 21:50:11
+
+
+
+
+
+
+
+
+
+
+
+
+https://phoenixnap.com/kb/how-to-create-mariadb-user-grant-privileges

@@ -1,34 +1,19 @@
-$( document ).ready(function() {
-    listarUsuario();
+$(document).ready(function() {
+  var urlBackEnd = "http://localhost/infoCurso/controllers/cadastroCliente.php";
+  
+  listarUsuario();
 
-
-    var urlBackEnd = "http://localhost:3000/views/cadastroUsuario.php";
 
     $(".btn-editar").on("click", function() {
         var id = $(this).val();
         $(".modal").modal('show');
     });
 
-    function buscarUsuario(id) {
+    function listarUsuario() {
 
-        $.get(urlBackEnd).done(function(responseJSON) {
-                console.log(responseJSON);
+        $.get(urlBackEnd).done(function(listadeUsusarios) {
+                montarTabela(listadeUsusarios)
 
-                $.each(responseJSON, function(idx, cliente) {
-                    if(id == cliente.id) {
-                        $("#id").val(cliente.id);
-                        $("#nome").val(cliente.nome);
-                        $("#Sobrenome").val(cliente.sobrenome);
-                        $("#dataNasc").val(cliente.dataNascimento);
-                        $("#email").val(cliente.email);
-                        $("#endereco").val(cliente.endereco);
-                        $("#cidade").val(cliente.cidade);
-                        $("#estado").val(cliente.estado);
-                        $("#nomedousuario").val(cliente.nomeUsuario);
-                        $("#profissao").val(cliente.profissao);
-                    }
-
-                });
             })
             .fail(function() {
                 alert( "error" );
@@ -51,12 +36,13 @@ $( document ).ready(function() {
         $("#nomedousuario").val("");
         $("#profissao").val("");
     }
-        function montarTabela(listadeUsusarios){
-            var tabelaHtml = montarCabecalho();
-            tabelaHtml += montarCorpoTabela (listadeUsuarios);
 
-            $("#idTabelaUsuarios").html(tabelaHtml);
-        }
+    function montarTabela(listadeUsuarios){
+        var tabelaHtml = montarCabecalho();
+        tabelaHtml += montarCorpoTabela (listadeUsuarios);
+
+        $("#idTabelaUsuario").html(tabelaHtml);
+    }
     
     function montarCabecalho(){
           var cabecalho = (
@@ -64,34 +50,22 @@ $( document ).ready(function() {
             "<thead>"+
               "<tr>" +
                 "<th>" +
-                  "Nome" +
+                  "Id" +
                 "</th>" +
                 "<th>" +
-                  "Sobrenome" +
+                  "nome" +
                 "</th>" +
                 "<th>" +
-                  "Data de Nascimento" +
+                  "usuario" +
                 "</th>" +
                 "<th>" +
-                  "E-mail" +
+                  "email" +
                 "</th>" +
                 "<th>" +
-                  "Endereço" +
+                  "senha" +
                 "</th>" +
                 "<th>" +
-                  "Cidade" +
-                "</th>" +
-                "<th>" +
-                  "Estado" +
-                "</th>" +
-                "<th>" +
-                  "Nome do Usuário" +
-                "</th>" +
-                "<th>" +
-                  "Profissão" +
-                "</th>" +
-                "<th>" +
-                  "Ações" +
+                  "status" +
                 "</th>" +
               "</tr>" +
             "</thead>"
@@ -113,11 +87,11 @@ $( document ).ready(function() {
              td += "<td>" + usuario.nome +"</td>";
              td += "<td>" + usuario.email +"</td>";
              td += "<td>" + usuario.usuario +"</td>";
-             td += "<td>" + usuario.status +"</td>";
+             td += "<td>" + statusDesc +"</td>";
              td += "<td>" + usuario.email_recuperacao +"</td>";
 
-             var btnEditar = "<button type='button' value=" + valor.id + "class='btn btn-warning btnEditar'>Editar <i class='far fa-edit'></i<>/button>";
-             var btnExcluir = "<button type='button' value=" + valor.id + "class='btn btn-danger btnExcluir'>Excluir <i class='far fa-trash-alt'></i<>/button>";
+             var btnEditar = "<button type='button' value=" + usuario.id + "class='btn btn-warning btnEditar'>Editar <i class='far fa-edit'></i></button>";
+             var btnExcluir = "<button type='button' value=" + usuario.id + "class='btn btn-danger btnExcluir'>Excluir <i class='far fa-trash-alt'></i></button>";
 
              td += "<td>" + btnEditar + btnExcluir + "</td>";
 

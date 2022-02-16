@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora!</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/cadastroUsuario.js"></script>
     <!--<link rel="stylesheet" type="text/css" href="./css/estilo.css">-->
@@ -23,108 +23,6 @@
   </button>
    
    <table id="idTabelaUsuario" class="table table-responsive table-striped table-hover">
-     <thead>
-       <tr>
-         <th>
-           Nome
-         </th>
-         <th>
-           Sobrenome
-         </th>
-         <th>
-           Data de Nascimento
-         </th>
-         <th>
-           E-mail
-         </th>
-         <th>
-           Endereço
-         </th>
-         <th>
-           Cidade
-         </th>
-         <th>
-           Estado
-         </th>
-         <th>
-           Nome do Usuário
-         </th>
-         <th>
-           Profissão
-         </th>
-         <th>
-           Ações
-         </th>
-       </tr>
-     </thead>
-      <tbody>
-        <tr>
-          <td>
-            Caroline
-          </td>
-          <td>
-            Tremarin Araldi
-          </td>
-          <td>
-            08/01/2002        
-          </td>
-          <td>
-            tremarincaroline8@gmail.com
-          </td>
-          <td>
-            Rua Candido Costa
-          </td>
-          <td>
-            BG
-          </td>
-          <td>
-            RS
-          </td>
-          <td>
-            Caroline
-          </td>
-          <td>
-            TI
-          </td>
-          <td>
-            <button type="button" class="btn btn-editar" value = "1" >Editar</button>
-            <button type="button" class="btn btn-excluir" value = "1">Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            Caroline b
-          </td>
-          <td>
-            Tremarin Araldi
-          </td>
-          <td>
-            08/01/2002        
-          </td>
-          <td>
-            tremarincaroline8@gmail.com
-          </td>
-          <td>
-            Rua Candido Costa
-          </td>
-          <td>
-            BG
-          </td>
-          <td>
-            RS
-          </td>
-          <td>
-            Caroline
-          </td>
-          <td>
-            TI
-          </td>
-          <td>
-            <button type="button" class="btn btn-editar" value = "2" >Editar</button>
-            <button type="button" class="btn btn-excluir" value = "2">Excluir</button>
-          </td>
-        </tr>
-      </tbody>
    </table>
 </div>
 

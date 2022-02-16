@@ -3,26 +3,31 @@
 $servidor = "localhost";
 $porta = "3306";
 $nomedobanco = "info_curso";
-$usuario = "root";
+$usuario = "aluno1";
 $senha = "qwe123";
 
-$conexao = null;
-
-function conectar(){
-
-    $conexao = new \mysqli($servidor, "root", "qwe123", $nomeBanco, $porta);
-
-    if ($conexao->connect_error) {
-        die('Não foi possível conectar: ' . $conexao->connect_error);
-    }
-    echo 'Conexão bem sucedida <br>';
+if ($conexao) {
+    desConectar();
+    $conexao = null;
 }
 
-function desConectar(){
+function conectar() {
+    global $conexao;
+
+    $conexao = mysqli_connect("localhost", "aluno1", "qwe123", "info_curso");
+    // $conexao = mysqli_connect("localhost", "aluno", "qwe123", "info_curso");
+
+    if (!$conexao) {
+        die('Não foi possível conectar: ' . mysqli_connect_error());
+    }
+}
+
+function desConectar() {
     echo 'Desconectou';
     mysql_close($conexao);
     
 }
 
-conectar();
-desConectar();
+if (!$conexao) {
+    conectar();
+}
