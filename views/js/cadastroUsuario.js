@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var urlBackEnd = "http://localhost/infoCurso/controllers/cadastroCliente.php";
+  var urlBackEnd = "http://localhost/infoCurso/controllers/usuariosController.php?";
   
   listarUsuario();
 
@@ -10,8 +10,13 @@ $(document).ready(function() {
     });
 
     function listarUsuario() {
+       var objRota = {
+         rota: "listarTodosUsuarios"
+       }
 
-        $.get(urlBackEnd).done(function(listadeUsusarios) {
+       var urlFinal = urlBackEnd + $.param(objRota); 
+
+        $.get(urlFinal).done(function(listadeUsusarios) {
                 montarTabela(listadeUsusarios)
 
             })
